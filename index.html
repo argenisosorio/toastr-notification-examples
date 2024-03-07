@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toastr example</title>
+    <script src="jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="toastr.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="toastr.min.css" type="text/css"/>
+</head>
+<body>
+    <script>
+        // Ejemplo de uso básico de Toastr
+        /*
+        let options = {
+            closeButton: true,
+            progressBar: true,
+            timeOut: 5000,
+            extendedTimeOut: 1000,
+            preventDuplicates: true
+        };
+        toastr.success("Hola!", "", options);
+        */
+        function showMessage(type) {
+            let options = {
+                closeButton: true,
+                progressBar: true,
+                timeOut: 5000,
+                extendedTimeOut: 1000,
+                preventDuplicates: true
+            };
+            if (type === 'success') {
+                toastr.success("Registro creado", "", options);
+            } else if (type === 'updated') {
+                toastr.success("Registro actualizado", "", options);
+            } else if (type === 'destroy') {
+                toastr.error("Registro eliminado", "", options);
+            } else if (type === 'warning') {
+                toastr.warning("¡Cuidado!", "", options);
+            } else if (type === 'info') {
+                toastr.info("¡Info!", "", options);
+            }
+        }
+        // showMessage('updated');
+        // showMessage('destroy');
+        // showMessage('warning');
+        // showMessage('info');
+        showMessage('success');
+    </script>
+</body>
+</html>
